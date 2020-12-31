@@ -51,7 +51,15 @@ lsmod | grep nouveau
 > ```shell
 > sudo service lightdm stop    
 > ```
-> 
+>> if not work
+>> ```shell
+>>    #禁用图形目标
+>>    sudo systemctl isolate multi-user.target
+>>    #卸载Nvidia驱动程序
+>>    modprobe -r nvidia-drm
+>>    #安装驱动完成之后再次启动图形环境，可以使用此命令：
+>>    sudo systemctl start graphical.target
+>> ```
 > 卸载系统中存在的驱动，默认有安装的，一定要执行这个
 > ```shell
 > sudo apt-get remove nvidia-*    
