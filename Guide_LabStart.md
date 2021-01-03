@@ -10,8 +10,8 @@
 
 ## 3D presentation
 
-
 ## Camera and Projection
+
 
 
 ## （学硕）深度学习原理
@@ -20,6 +20,11 @@ cpu上，基于c/c++
 
 ## 深度学习实践
 gpu
+
+
+## 二选一（日常英文Presentation和专业中午Presentation）
+
+## 论文笔记Dataset
 
 
 # 专业技能（选修）
