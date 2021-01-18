@@ -29,21 +29,8 @@
 
 # 2. conda命令
 ## 2.1. 源
-清华源
->```cmd
->conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
->conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/>conda-forge/ 
->conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/>msys2/
->```
-中科大源
->```cmd
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
->conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
->```
+更换清华源参考官网```https://mirror.tuna.tsinghua.edu.cn/help/anaconda/```
+
 设置搜索时显示通道地址
 >```
 >conda config --set show_channel_urls yes

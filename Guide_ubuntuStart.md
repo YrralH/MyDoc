@@ -1,11 +1,14 @@
+
 <!-- TOC -->
 
 - [1. Basic](#1-basic)
   - [1.1. Installing file: .Deb](#11-installing-file-deb)
   - [1.2. Install NVIDIA graphic card driver](#12-install-nvidia-graphic-card-driver)
-  - [1.3. Common Operation](#13-common-operation)
-    - [1.3.1. chmod](#131-chmod)
-    - [1.3.2. tar](#132-tar)
+  - [1.3. Install CUDA](#13-install-cuda)
+  - [Install CuDnn](#install-cudnn)
+  - [1.4. Common Operation](#14-common-operation)
+    - [1.4.1. chmod](#141-chmod)
+    - [1.4.2. tar](#142-tar)
 - [2. Networking](#2-networking)
   - [2.1. My MI Router](#21-my-mi-router)
     - [2.1.1. Settings to Connect Router](#211-settings-to-connect-router)
@@ -20,7 +23,6 @@
   - [3.2. A Train](#32-a-train)
 
 <!-- /TOC -->
-
 # 1. Basic
 
 ## 1.1. Installing file: .Deb
@@ -81,8 +83,35 @@ lsmod | grep nouveau
 > |-no-nouveau-check|安装驱动时禁用nouveau|
 > |-no-opengl-files|只安装驱动文件，不安装OpenGL文件|
 
-## 1.3. Common Operation
-### 1.3.1. chmod
+## 1.3. Install CUDA
+nvidia-smi查看符合的cuda版本  
+或者没装驱动的时候，直接下载大约3G的cuda安装包，里面自带驱动  
+以安装CUDA11.1.0为例
+> 访问官网  ```https://developer.nvidia.com/cuda-11.1.0-download-archive```参考官方意见  
+> 执行  
+> ```shell
+> wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+> sudo sh cuda_11.1.0_455.23.05_linux.run
+> ```
+装好之后默认安装在```/usr/local/cuda-11.1/```   
+同时产生一个软连接```/usr/local/cuda```到```/usr/local/cuda-11.1```   
+在```~/.bashrc```末尾加入  
+> ```shell  
+> #CUDA hj in 2021-01-17
+> export PATH=/usr/local/cuda/bin:$PATH
+> export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+> export CUDA_HOME=/usr/local/cuda
+> ```
+启用```~/.bashrc```后输入
+```shell
+nvcc -V
+```
+查看是否成功
+
+## Install CuDnn
+
+## 1.4. Common Operation
+### 1.4.1. chmod
 > ```shell
 > # read only
 > sudo chmod 440 /etc/sudoer
@@ -90,7 +119,7 @@ lsmod | grep nouveau
 > sudo chmod 777 /etc/sudoer
 > ```
 
-### 1.3.2. tar
+### 1.4.2. tar
 > ```shell
 > #不压缩 打包
 > tar cvf xxx.tar FOLDER_NAME
