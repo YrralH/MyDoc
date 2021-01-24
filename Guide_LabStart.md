@@ -13,7 +13,10 @@
 
 ## Camera and Projection
 
-
+## 环境配置实践
+ubuntu主机搭建
+一个python的  
+一个cmake的
 
 ## （学硕）深度学习原理
 cpu上，基于c/c++
